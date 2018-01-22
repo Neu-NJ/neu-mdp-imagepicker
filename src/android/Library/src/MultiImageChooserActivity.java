@@ -42,8 +42,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.jar.Manifest;
-
-import com.neusoft.mdp.cjy.R;
 import com.synconset.FakeR;
 import android.app.Activity;
 import android.app.ActionBar;
@@ -367,6 +365,7 @@ public class MultiImageChooserActivity extends Activity implements OnItemClickLi
         final View customActionBarView = inflater.inflate(fakeR.getId("layout", "actionbar_custom_view_done_discard"), null);
         customActionBarView.findViewById(fakeR.getId("id", "actionbar_done")).setOnClickListener(new View.OnClickListener() {
             @Override
+            
             public void onClick(View v) {
                 // "Done"
                 selectClicked(null);
@@ -464,7 +463,7 @@ public class MultiImageChooserActivity extends Activity implements OnItemClickLi
         public View getView(int pos, View convertView, ViewGroup parent) {
           ViewHolder viewHolder=new ViewHolder();
             if (convertView == null) {
-              convertView= LayoutInflater.from(MultiImageChooserActivity.this).inflate(R.layout.item_image_pick,null);
+              convertView= LayoutInflater.from(MultiImageChooserActivity.this).inflate(fakeR.getId("layout", "item_image_pick"), null);
               viewHolder.imageView=(ImageView)convertView.findViewById(fakeR.getId("id","item_image"));
               viewHolder.pick=(ImageView) convertView.findViewById(fakeR.getId("id","item_pick"));
               convertView.setTag(viewHolder);
